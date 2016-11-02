@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>折叠菜单</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            ul{
+                list-style: none;
+            }
+            a{
+                text-decoration: none;
+            }
+            #menu h3 {
+                width: 200px;
+                height: 30px;
+                background: #000000;
+                color: #008000;
+                cursor: pointer;
+                line-height: 30px;
+                text-align: center;
+            }
+            #menu .sub-menu a{
+                width: 198px;
+                height: 30px;
+                background: #cccccc;
+                color: #008000;
+                cursor: pointer;
+                line-height: 30px;
+                text-align: center;
+                display: block;
+            }
+            #menu .sub-menu {
+                border: 1px solid;
+                display: none;
+            }
+            #menu li {
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="menu">
+            <li>
+                <h3>购物区</h3>
+                <ul class="sub-menu">
+                        <li><a href="#">淘宝</a></li>
+                        <li><a href="#">京东</a></li>
+                </ul>
+            </li>
+            <li>
+                <h3>社交区</h3>
+                <ul class="sub-menu">
+                    <li><a href="#">探探</a></li>
+                    <li><a href="#">陌陌</a></li>
+                    <li><a href="#">映客</a></li>
+                </ul>
+            </li>
+        </ul>
+        <script>
+            var oMent=document.getElementById ('menu');
+            var aH3=oMent.getElementsByTagName ('h3');
+            var aSubmenu=oMent.getElementsByTagName ('ul');
+            for(var i=0; i<aH3.length ; i++){
+                aH3[i].index = i;
+                aH3[i].bFlag = false;
+                aH3 [i].onclick = function (){
+                    if(this.bFlag ){
+                        aSubmenu [this.index].style.display = "none";
+                    }
+                    else{
+                        aSubmenu [this.index].style.display = "block";
+                    }
+                    this.bFlag =!this.bFlag ;
+                }
+            }
+        </script>
+        <!--<script>-->
+            <!--var oMenu = document.getElementById("menu");-->
+            <!--var aH3 = oMenu.getElementsByTagName("h3");-->
+            <!--var aSubMenu = oMenu.getElementsByTagName("ul");-->
+            <!--for(var i=0 ; i<aH3.length ; i++){-->
+                <!--aH3[i].bFlag = false ;-->
+                <!--aH3[i].onclick = function (){-->
+                    <!--var oUl = next(this);-->
+                    <!--if(this.bFlag ){-->
+                        <!--oUl.style.display = 'none';-->
+                    <!--}else{-->
+                        <!--oUl.style.display = 'block';-->
+                    <!--}-->
+                    <!--this.bFlag = !this.bFlag ;-->
+                <!--}-->
+            <!--}-->
+            <!--function next(a){-->
+                <!--do{-->
+                    <!--a = a.nextSibling ;-->
+                <!--}while(a && a.nodeType !="1"){-->
+                    <!--return a;-->
+                <!--}-->
+            <!--}-->
+        <!--</script>-->
+        <!--<script>-->
+            <!--var oUl = document.getElementById('menu');-->
+            <!--var aLi = oUl.children;-->
+
+            <!--for(var i=0; i<aLi.length; i++){-->
+                <!--aLi[i].onclick = function(){-->
+                    <!--//this: 对当前对象的引用-->
+                    <!--var oSubMenu = this.children[1];-->
+
+                    <!--if(oSubMenu.style.display == 'block'){-->
+                        <!--oSubMenu.style.display = 'none';-->
+                    <!--}else{-->
+                        <!--oSubMenu.style.display = 'block';-->
+                    <!--}-->
+                <!--};-->
+            <!--}-->
+        <!--</script>-->
+    </body>
+</html>
