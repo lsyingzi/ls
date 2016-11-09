@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>轮播图</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            ul{
+                list-style: none;
+            }
+            #container {
+                width: 640px;
+                height: 344px;
+                margin: 100px auto;
+                position: relative;
+            }
+           #content img{
+                display: none;
+            }
+            #content .selected {
+                display: block;
+            }
+            #tab li{
+                float: left;
+                width: 20px;
+                height: 20px;
+                background: #000000;
+                color: #ffff50;
+                line-height: 20px;
+                text-align:center;
+                margin: 5px;
+                cursor: pointer;
+            }
+            #tab {
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+            }
+            #tab .selected{
+                background: orange;
+            }
+            #arrow {
+                position: absolute;
+                left: 10px;
+                bottom: 10px;
+            }
+            #arrow span{
+                float: left;
+                width: 20px;
+                height: 20px;
+                background: #000000;
+                color: #ffff50;
+                line-height: 20px;
+                text-align:center;
+                margin: 5px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+           <div id="content">
+               <img class=selected src="img/1.jpg"/>
+               <img src="img/2.jpg"/>
+               <img src="img/3.jpg"/>
+               <img src="img/4.jpg"/>
+           </div>
+            <ul id="tab">
+                <li class="selected">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+            <div id="arrow">
+                <span id="prev"  class="selected">&lt</span>
+                <span id="next">&gt</span>
+            </div>
+        </div>
+        <script>
+            var oContent = document.getElementById ('content');
+            var aImg = oContent.getElementsByTagName ('img');
+            var oTab = document.getElementById ('tab');
+            var aLi = oTab.getElementsByTagName('li');
+            for(var i=0; i<aLi.length ; i++){
+                aLi [i].index =i;
+                aLi[i].onmouseover =function (){
+                    changeImg(this.index);
+                    iNow = this.index;
+                }
+            }
+            var oNext = document.getElementById ('next');
+            var iNow = 0;
+            oNext.onclick = function(){
+                iNow++;
+                if(iNow == aLi.length ){
+                    iNow = 0;
+                }
+                changeImg(iNow);
+
+            };
+            var oPrev = document.getElementById ('prev');
+            oPrev.onclick = function(){
+                iNow--;
+                changeImg(iNow);
+
+            };
+            function changeImg(a){
+                for(var i=0;i<aLi.length ;i++){
+                    aLi [i].className ='';
+                    aImg [i].className ='';
+                }
+                aLi[a].className ='selected';
+                aImg [a].className ='selected';
+            }
+            var timer;
+            timer = setInterval(function(){
+                oNext.onclick();
+            },2000);
+            oContainer.onmouseover = function(){
+                clearInterval(timer);
+            }
+            oContainer.onmouseout = function(){
+                timer = setInterval(function(){
+                    oNext.onclick();
+                },2000);
+            }
+
+        </script>
+    </body>
+</html>
