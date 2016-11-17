@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>转账</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #container{
+                width: 400px;
+                height: 500px;
+                margin: 0 auto;
+                position: relative;
+            }
+            #container p{
+                width: 260px;
+                height: 40px;
+                background: #ffffff;
+                color: #008000;
+                font-size: 40px;
+                line-height: 40px;
+            }
+            #content{
+                width: 360px;
+                height: 300px;
+                position: absolute;
+                top: 150px;
+                left: 50%;
+                margin-left: -130px;
+            }
+            #content input {
+                width: 256px;
+                height: 50px;
+                font-size: 28px;
+                text-align: center;
+            }
+            #in2{
+                width: 130px;
+                height: 50px;
+            }
+            #in3{
+                width: 130px;
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="content">
+                <form action="">
+                    <p>输入卡号:</p>
+                    <input  type="text"/>
+                    <p>金额:</p>
+                    <input type="text"/>
+                    <br/>
+                    <button id="in2">确认</button><button id="in3">重置</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
