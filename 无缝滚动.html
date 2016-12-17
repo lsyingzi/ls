@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>无缝滑动</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            ul{
+                list-style: none;
+            }
+            #container {
+                width: 400px;
+                height: 200px;
+                border: 1px solid;
+                margin: 100px auto;
+                position: relative;
+                overflow: hidden;
+            }
+            #content li{
+                width: 120px;
+                height: 120px;
+                background: #000000;
+                color: #ffffff;
+                font-size: 32px;
+                margin-top: 10px;
+                margin-right: 10px;
+                line-height: 120px;
+                text-align: center;
+                float: left;
+            }
+            #content {
+                width: 520px;
+                position: absolute;
+            }
+            #arrow span {
+                width: 120px;
+                height: 30px;
+                margin-right: 10px;
+                background: #cccccc;
+                line-height: 30px;
+                text-align: center;
+                float: left;
+                overflow: hidden;
+                cursor: pointer;
+            }
+            #arrow {
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                margin-left: -105px;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="container">
+        <div>
+            <ul id="content">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+        <div id="arrow">
+            <span id="left-btn">&lt;&lt;向左</span>
+            <span id="right-btn">向右&gt;&gt</span>
+        </div>
+    </div>
+    <script>
+        var oContent = document.getElementById("content");
+        oContent. innerHTML = oContent.innerHTML + oContent.innerHTML;
+        var aLi = oContent.getElementsByTagName("li");
+        var oLeftBtn = document.getElementById("left-btn");
+        var oRightBtn = document.getElementById("right-btn");
+        oContent.style.width = aLi.length * (aLi[0].offsetWidth + 10) + "px";
+        var speed = -2;
+        setInterval (function (){
+            if(oContent.offsetLeft <= -oContent.offsetWidth/2){
+                oContent.style.left= 0;
+            }
+            oContent.style.left = oContent.offsetLeft + speed + "px";
+            if(oContent.offsetLeft > 0){
+                oContent.style.left= -oContent.offsetWidth/2 + "px";
+            }
+            oContent.style.left = oContent.offsetLeft + speed + "px";
+        },30)
+        oLeftBtn.onmouseover = function(){
+            speed = -2;
+        }
+        oRightBtn.onmousemove = function(){
+            speed = 2;
+        }
+    </script>
+    </body>
+</html>
