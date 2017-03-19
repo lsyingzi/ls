@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>放大镜</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #small-box {
+                width: 400px;
+                height: 500px;
+                position: relative;
+                float: left;
+            }
+            #big-box {
+                width: 400px;
+                height: 500px;
+                float: left;
+                display: none;
+                overflow: hidden;
+            }
+            #small-box img{
+                width: 400px;
+                height: 500px;
+            }
+            #big-box img{
+                width: 800px;
+                height: 1000px;
+                position: relative;
+            }
+            #drag {
+                width: 200px;
+                height: 250px;
+                background: #cccccc;
+                opacity: 0.5;
+                filter: alpha(opacity = 50);
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="small-box">
+                <img src="imgges/1.jpg" alt=""/>
+                <div id="drag"></div>
+            </div>
+            <div id="big-box">
+                <img id="big-img" src="imgges/1.jpg" alt=""/>
+            </div>
+        </div>
+        <script>
+            var oSmallBox = document.getElementById("small-box");
+            var oDrag = document. getElementById("drag");
+            var oBigBox = document.getElementById("big-box");
+            var oBigImg = document.getElementById("big-img");
+//            var aimg = oBigBox.getElementsByTagName("img")[0];
+                    oSmallBox.onmouseover = function (){
+                oDrag.style.display = "block";
+                oBigBox.style.display = "block";
+            }
+            oSmallBox.onmousemove = function (e){
+                e = e || window.event ;
+                var left = e.clientX - oDrag.offsetWidth /2;
+                var top = e.clientY - oDrag.offsetHeight /2;
+                if(left < 0){
+                    left = 0;
+                }else if(left > oSmallBox.offsetWidth -oDrag.offsetWidth ){
+                    left = oSmallBox.offsetWidth -oDrag.offsetWidth;
+                }
+                if(top < 0){
+                    top = 0;
+                }else if(top > oSmallBox.offsetHeight -oDrag.offsetHeight ){
+                    top =  oSmallBox.offsetHeight -oDrag.offsetHeight;
+                }
+                oDrag.style.left = left + 'px';
+                oDrag.style.top = top + 'px';
+                var aleft =oDrag.offsetLeft /(oSmallBox.offsetWidth -oDrag.offsetWidth );
+                var aleft1 =aleft * (oBigImg .offsetWidth - oBigBox.offsetWidth);
+                var atop = oDrag.offsetTop /(oSmallBox.offsetHeight - oDrag.offsetHeight );
+                var atop1 = atop * (oBigImg .offsetHeight - oBigBox.offsetHeight);
+                oBigImg .style.left = -aleft1 + "px";
+                oBigImg .style.top = -atop1 + "px";
+            }
+            oSmallBox.onmouseout = function (){
+                oDrag.style.display = "none";
+                oBigBox.style.display = "none";
+            }
+
+        </script>
+    </body>
+</html>
