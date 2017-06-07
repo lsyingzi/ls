@@ -1,0 +1,191 @@
+#shengti {
+    background: #31333e;
+    position: relative;
+}
+#first {
+    width: 1003px;
+    height: 460px;
+    margin: 0 auto;
+    position: relative;
+}
+#wenzi1{
+    width: 521px;
+    height: 39px;
+    background: url(../img/2.png) 0 -144px no-repeat;
+    position: absolute;
+    left: 150px;
+    top: 46px;
+}
+#kuang{
+    width: 180px;
+    height: 48px;
+    background: url(../img/2.png) 0 -186px no-repeat;
+    position: absolute;
+    top: 40px;
+    right: 124px;
+}
+#prev,#next {
+    width: 30px;
+    height: 55px;
+    position: absolute;
+    top: 50%;
+    margin-top:-27px;
+}
+#prev {
+    left: 0;
+    background: url(../img/2.png) -47px 0 no-repeat ;
+}
+#next  {
+    right: 0;
+    background: url(../img/2.png) -88px 0 no-repeat ;
+}
+#shengti2 {
+    background: #fff;
+}
+#second {
+    width: 1003px;
+    height: 492px;
+    margin: 0 auto;
+}
+#zuo{
+    width: 33%;
+    height: 492px;
+    float: left;
+}
+#zho{
+    width: 34%;
+    height: 492px;
+    float: left;
+}
+#you{
+    width: 33%;
+    height: 492px;
+    float: left;
+}
+.web-design{
+    width: 160px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 88px;
+}
+.bi {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: 35px;
+}
+#aaa{
+    background: url("../img/2.png") -137px 0 no-repeat;
+}
+#bbb{
+    background: url("../img/2.png") -254px 0 no-repeat;
+}
+#ccc{
+    background: url("../img/2.png") -371px 0 no-repeat;
+}
+#aa {
+    background: url("../img/3.png") 0 0 no-repeat;
+}
+#bb{
+    background: url("../img/3.png") 0 -28px no-repeat;
+}
+#cc{
+    background: url("../img/3.png") 0 -54px no-repeat;
+}
+.wenzi2{
+    width: 280px;
+    height: 95px;
+    font-size: 12px;
+    color: #2a2e39;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.rlad{
+    color: #00aeff;
+    text-align: center;
+    margin-top: 30px;
+}
+#shengti3{
+    background: #e2e7ed;
+}
+#third{
+    width: 1003px;
+    height: 500px;
+    margin: 0 auto;
+    background: #e2e7ed;
+}
+#xia img{
+    display: block;
+}
+#xia li{
+  float: left;
+}
+#lal{
+    position: relative;
+    width: 1003px;
+    margin: 0 auto;
+}
+#prev1,#next1{
+    width: 30px;
+    height: 42px;
+    position: absolute;
+    top: 50%;
+    margin-top: -21px;
+}
+#prev1{
+    left: 0;
+    background: url("../img/2.png") 5px -100px no-repeat;
+}
+#next1{
+    right: 0;
+    background: url("../img/2.png") -24px -100px no-repeat;
+}
+#feed{
+    background: #31333e;
+}
+#mm{
+    width: 1003px;
+    margin: 0 auto;
+    position: relative;
+}
+#jj{
+    width: 283px;
+    height: 38px;
+    position: absolute;
+    top: 45px;
+    right: 0;
+}
+#jj li {
+    width: 38px;
+    height: 38px;
+    float: left;
+    margin-right: 11px;
+}
+#jj li:last-child {
+    margin-right: 0;
+}
+#jj li a{
+    display: block;
+    width: 38px;
+    height: 38px;
+}
+#qq {
+    background: url("../img/2.png") -58px -100px no-repeat;
+}
+#ww {
+    background: url("../img/2.png") -104px -100px no-repeat;
+}
+#ee {
+    background: url("../img/2.png") -150px -100px no-repeat;
+}
+#rr {
+    background: url("../img/2.png") -198px -100px no-repeat;
+}
+#tt {
+    background: url("../img/2.png") -245px -100px no-repeat;
+}
+#yy {
+    background: url("../img/2.png") -292px -100px no-repeat;
+}
